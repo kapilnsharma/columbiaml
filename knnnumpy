@@ -1,0 +1,48 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+### Code a function called "all_distances"
+### ACCEPT two inputs:
+### An observation from a data set.  e.g: har_train.iloc[50,:]
+### The full data set. e.g. har_train.
+
+### Create a <list> or numpy array of distances between:
+### ### that single point, and all points in the full dataset
+
+### RETURN the list of distances SORTED from smallest to largest.
+
+### Notes:
+### Use `np.linalg.norm()`, as described in above cell.
+### The smallest distance should be 0.
+
+### YOUR ANSWER BELOW
+#adapted from solution brief
+
+def all_distances(test_point, data_set):
+    """
+    Find and return a list of distances between the "test_point"
+    and all the points in "data_set", sorted from smallest to largest.
+    
+    Positional Arguments:
+        test_point -- a Pandas Series corresponding to a row in "data_set"
+        data_set -- a Pandas DataFrame
+    
+    Example:
+        test_point = har_train.iloc[50,:]
+        data_set = har_train
+        
+        print(all_distances(test_point, data_set)[:5])
+        #--> [0.0, 2.7970187358249854, 2.922792670143521, 2.966555149052483, 3.033982453218797]
+    
+    """
+    
+    # Take difference
+    diff = test_point - data_set
+    # Find distance
+    dists = np.apply_along_axis(np.linalg.norm, 1, diff )
+    # Sort
+    dists = np.sort(dists)
+    return dists
