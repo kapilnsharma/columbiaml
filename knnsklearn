@@ -1,0 +1,35 @@
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+#From Columbia University ML Course with emeritus
+### Build a KNN classifier using sklearn.
+### ### specify n_neighbors as 10. Otherwise accept the `KNeighborsClassifier` defaults.
+
+### Fit the model using the provided "X_train3" and "y_train3" variables, from above cell.
+### assign the predictions from your model for the provided "X_test3" data to a variable called ans1.
+### YOUR ANSWER BELOW
+"""
+Example:
+
+# Code for Instantiating a KNN Model
+
+# Fit KNN with X_train3 and y_train3
+
+# Create Predictions on X_test3
+
+ans1 = preds
+
+print(ans1[:5])
+#-->np.array([6 5 1 6 4])
+
+### NOTE: Your predictions may look different due to how "random_state" depends on current time.
+"""
+
+clas = KNeighborsClassifier(n_neighbors=10)
+clas.fit(X_train3, y_train3)
+preds = clas.predict(X_test3)
+ans1 = preds
