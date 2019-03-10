@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 %matplotlib inline
 
+# Import for sklearn
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+
 #From Columbia University ML Course with emeritus
 ### Build a KNN classifier using sklearn.
 ### ### specify n_neighbors as 10. Otherwise accept the `KNeighborsClassifier` defaults.
